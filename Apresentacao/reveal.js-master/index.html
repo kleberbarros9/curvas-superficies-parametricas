@@ -8,7 +8,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white-contrast.css">
 		<link rel="stylesheet" href="./css/style.css">
 
 		<!-- Theme used for syntax highlighted code -->
@@ -17,6 +17,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<!-- Seção 1 -->
 				<section>
 					<div class="alert alert-primary" role="alert">
@@ -32,29 +33,48 @@
 				</section>
 
 
+
+
+
 				<!-- Seção 2 -->
 				<section>
-					<ul>
-						<li>Contextualização histórica</li>
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Introdução
+						</div>
+					</section>
+
+					<section>
 						<ul>
-							<li>Origem: Século XVII com Fermat e Descartes.</li>
-							<li>Desenvolvimento: século XVIII com Euler e Lagrange.</li>
+							<li>Contextualização histórica</li>
+							<ul>
+								<li>Origem: Século XVII com Fermat e Descartes.</li>
+								<li>Desenvolvimento: século XVIII com Euler e Lagrange.</li>
+							</ul>
+							<li>Importância e aplicações modernas</li>
+							<ul>							<li>Permitem descrever pontos por parâmetros independentes</li>
+								<li>Aplicações: representação geométrica e seu uso em física, engenharia e computação gráfica </li>
+							</ul>
 						</ul>
-						<li>Importância e aplicações modernas</li>
-						<ul>							<li>Permitem descrever pontos por parâmetros independentes</li>
-							<li>Aplicações: representação geométrica e seu uso em física, engenharia e computação gráfica </li>
-						</ul>
-					</ul>
+					</section>
 				</section>
+
+
+
+
+
 
 
 				<!-- Seção 3 -->
 				<section>
-
 					<section>
 						<div class="alert alert-primary" role="alert">
 							Curvas Paramétricas Implícitas 
 						</div>
+					</section>
+
+					<section>
+						
 	
 							<!-- <h2>Definição</h2> -->
 							<span>Definição </span>
@@ -145,6 +165,10 @@
 						<div class="alert alert-primary" role="alert">
 							Interpolação
 						</div>
+					</section>
+
+					<section>
+						
 	
 
 					
@@ -186,6 +210,30 @@
 					<section>
 						<iframe src="./iframes/Interpolation.html" frameborder="0" width="800" height="600" allowfullscreen></iframe>
 					</section>
+
+
+					<section>
+						Interpolação (ou Multiplicadores) de Lagrange
+
+						<p class="small-size">
+							Dado um conjunto de $k+1$ pontos: 
+							$(x_0, y_0),\ldots,(x_k, y_k)$
+							com todos $x_j$ distintos, o polinômio de interpolação de um conjunto de pontos na forma de Lagrange é a combinação linear dos polinômios da base de Lagrange:
+	
+							$$L(x) := \sum_{j=0}^{k} y_j l_j(x),$$
+	
+							com polinômios da base de Lagrange dados por:
+	
+							\[l_j(x) := \prod_{i=0, j\neq i}^{k} \frac{x-x_i}{x_j-x_i} = \frac{x-x_0}{x_j-x_0} \cdots \frac{x-x_{j-1}}{x_j-x_{j-1}} \frac{x-x_{j+1}}{x_j-x_{j+1}} \cdots \frac{x-x_{k}}{x_j-x_{k}}\]
+						</p>
+
+					</section>
+
+					<section>
+						<p class="small-size"> Multiplicadores de Lagrange para os pontos: $(2,1), (3,6), (4,4)$ e $(5,5)$:</p>
+
+						<img src="./assets/img/lagrange.png" alt="" height="500px">
+					</section>
 				</section>
 
 
@@ -197,6 +245,53 @@
 						<div class="alert alert-primary" role="alert">
 							Curva Bézier
 						</div>
+					</section>
+
+					<section>
+						<h2>Continuidade</h2>
+
+						<div class="container">
+							<div class="row">
+							  <div class="col-6">
+								<div class="alert alert-info small-size" role="alert">
+									$C^0$: as duas curvas apresentam um ponto de junção.
+								  </div>
+							  </div>
+							  <div class="col-6">
+								<img src="./assets/img/c0-continuity.png" alt="">
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="col-6">
+								<div class="alert alert-info small-size" role="alert">
+									$C^1$: A direção dos vetores tangentes no ponto de junção são iguais.
+								  </div>
+							  </div>
+							  <div class="col-6">
+								<img src="./assets/img/c1-continuity.png" alt="">
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="col-6">
+								<div class="alert alert-info small-size" role="alert">
+									$C^2$: A direção e a magnitude dos vetores tangentes no ponto de junção são iguais.
+								  </div>
+							  </div>
+							  <div class="col-6">
+								<img src="./assets/img/c2-continuity.png" alt="">
+							  </div>
+							</div>
+						  </div>
+						  
+
+
+
+
+
+					</section>
+
+					<section>
+						
 
 						<p class="justify">
 							A curva de Bézier foi desenvolvida por Paul de Casteljau na decada e 1960 e implementada por Pierre Bézier na Renault, para resolver o problema de desenhar linhas suaves a partir de pontos de controle.
@@ -247,7 +342,7 @@
 
 						  
 
-						<table class="tg">
+						<table class="tg small-size">
 							<thead>
 							  <tr>
 								<th class="tg-0lax">$t=$</th>
@@ -321,17 +416,11 @@
 							</div>
 						  </div>
 
-
-						
-
-
 					</section>
 
 
 
 					<section>
-
-
 						<p class="justify-left small-size">
 							<strong>Algoritmo de De Casteljau:</strong>
 
@@ -399,6 +488,10 @@
 						<div class="alert alert-primary" role="alert">
 							Curva de Hermite
 						</div>
+					</section>
+
+					<section>
+						
 
 						<ul>
 							<li class="small-size">
@@ -469,10 +562,144 @@
 
 
 					</section>
+				</section>
+
+
+
+
+				<!-- Seção 7 -->
+				<section>
+					<section>
+						<div class="alert alert-primary" role="alert">
+							B-splines
+						</div>
+					</section>
+
+
+					<section>
+						<ul>
+							<li>Uma spline é uma curva flexível</li>
+							<li>Definida por pontos de controle, sem passar por eles.</li>
+							<li>Maior flexibilidade que Bézier e Hermite.</li>
+							<li>A movimentação de um ponto de controle afeta apenas a visinhança do ponto.</li>
+						</ul>
+
+
+						<div class="container">
+							<div class="row">
+							  <div class="col-md-6">
+
+								<img src="./assets/img/splines1.png" alt="spline 1" width="350px" height="300px">
+
+							  </div>
+							  <div class="col-md-6">
+
+								  <img src="./assets/img/splines2.png" alt="spline 2" width="350px" height="300px">
+
+							  </div>
+							</div>
+						  </div>
+					</section>
+
+
+					<section>
+						B-splines Cúbicas
+
+						<ul>
+							<li><strong>Cúbicas</strong> tem $4$ pontos de
+								controle.</li>
+							<li> <strong>Cardinal B-splines</strong> têm knots que
+								são eqüidistantes uns dos outros.</li>
+							<li>Pontos de controle: pontos que influenciam a forma da curva</li>
+							<li>Nós (knots): Pontos onde os seguimentos se juntam</li>
+						</ul>
+
+						<div class="container">
+							<div class="row">
+							  <div class="col-md-6">
+
+								<img src="./assets/img/b-splines-comportamento.png" alt="nós versus pontos de controle" height="250px">
+
+							  </div>
+							  <div class="col-md-6">
+
+								<img src="./assets/img/b-spline-nos-pc.png" alt="nós versus pontos de controle"height="250px">
+
+							  </div>
+							</div>
+						  </div>
+					</section>
+
+
+					<section>
+						Forma matricial:
+
+						\[\begin{aligned}
+						P(t) &amp; = \frac{1}{6}\times\\
+						&amp;  \begin{pmatrix}
+						t^3 & t^2 & t & 1 \\
+						\end{pmatrix}
+
+						\begin{pmatrix}
+							-1 & 3 & -3 & 1 \\
+							3 & -6 & 3 & 0 \\
+							-3 & 0 & 3 & 0 \\
+							-1 7& 4 & 1 & 0 \\
+						\end{pmatrix}
+
+						\begin{pmatrix}
+							P_0 \\
+							P_1 \\
+							P_2 \\
+							P_3 \\
+						\end{pmatrix}
+						\end{aligned} \]
+
+
+					</section>
+				</section>
+
+
+<!-- 				Seção 8 -->
+					<section>
+						<section>
+							<div class="alert alert-primary" role="alert">
+								Implementação
+							</div>
+						</section>
+
+						<section>
+
+							<div class="container d-flex justify-content-center align-items-center vh-100">
+								<!-- Utilizando flexbox para centralizar vertical e horizontalmente -->
+								<div class="conteudo-centralizado">
+									<ul>
+										<li><a href="https://voxelent.com/html/beginners-guide/chapter_5/ch5_BouncingBalls_Optimized.html">WebGL - Curvas paramétricas implícitas</a></li>
+										<li><a href="https://voxelent.com/html/beginners-guide/chapter_5/ch5_Interpolation.html">WebGL - Interpolação</a></li>
+									</ul>
+								</div>
+							  </div>
+						</section>
+					</section>
+
+
+
+<!-- 				Seção 9 -->
+					<section>
+						<section>
+							<div class="alert alert-primary" role="alert">
+								Superfícies Paramétricas
+							</div>
+						</section>
+					</section>					
+
+
+
+
+
 
 
 				</section>
-
 
 
 

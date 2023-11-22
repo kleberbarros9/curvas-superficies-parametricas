@@ -27,3 +27,10 @@
     text-align: left;
     font-size: 1.7rem;
 }
+
+
+.conteudo-centralizado {
+  background-color: #f0f0f0;
+  padding: 0;
+  border-radius: 5px;
+}
