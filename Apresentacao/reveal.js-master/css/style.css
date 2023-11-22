@@ -1,0 +1,29 @@
+
+.my-h2 {
+    color: black!important;
+}
+
+
+.custom-div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+  }
+
+
+
+  .justify {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .justify-left {
+    text-align: left;
+    text-justify: inter-word;
+  }
+
+
+.small-size {
+    text-align: left;
+    font-size: 1.7rem;
+}

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="./css/style.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Seção 1 -->
+				<section>
+					<div class="alert alert-primary" role="alert">
+						<h2 class="my-h2">Curvas e Superfícies Paramétricas</h2>
+						
+					</div>	
+					
+					<h3>Computação Gráfica</h3>
+					<p>José Matheus</p>
+					<p>Kleber Barros</p>
+					<h5>Computação Gráfica</h5>
+					<h4>Centro universitário de João Pessoa - UNIPÊ</h4>
+				</section>
+
+
+				<!-- Seção 2 -->
+				<section>
+					<ul>
+						<li>Contextualização histórica</li>
+						<ul>
+							<li>Origem: Século XVII com Fermat e Descartes.</li>
+							<li>Desenvolvimento: século XVIII com Euler e Lagrange.</li>
+						</ul>
+						<li>Importância e aplicações modernas</li>
+						<ul>							<li>Permitem descrever pontos por parâmetros independentes</li>
+							<li>Aplicações: representação geométrica e seu uso em física, engenharia e computação gráfica </li>
+						</ul>
+					</ul>
+				</section>
+
+
+				<!-- Seção 3 -->
+				<section>
+
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Curvas Paramétricas Implícitas 
+						</div>
+	
+							<!-- <h2>Definição</h2> -->
+							<span>Definição </span>
+
+						\[
+							\begin{cases}
+								x & = f(t) \\
+								y & = g(t) \\
+							\end{cases}
+						\]
+
+
+					</section>
+
+					<section>
+						Linear
+
+						\[
+							\begin{cases}
+								x & = t \\
+								y & = at + b \\
+							\end{cases}
+						\]
+
+						<img src="/assets/gif/bezierLinear.gif" alt="" height="150px">
+					</section>
+
+
+					<section>
+						Parábola
+						\[
+							\begin{cases}
+								x & = t \\
+								y & = at^2+bt+c \\
+							\end{cases}
+						\]
+						<iframe src="https://giphy.com/embed/12OUZridgOdMOI" width="480" height="322" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+					</section>
+
+
+
+					<section>
+							Elipse
+
+						\[
+							\begin{cases}
+								x & = a\cdot  cos(t) \\
+								y & = b\cdot sen(t) \\
+							\end{cases}
+						\]
+
+							<iframe src="./iframes/GraphingParametricEquations2.html" width="500px" height="500px"></iframe>
+					</section>
+
+
+					<section>
+						Curvas mais complexas: Hipotrocóide
+						
+					\[
+						\begin{cases}
+							x & = (R-r)cos(t) + d\cdot cos\left(\frac{R-r}{r}t\right) \\
+							y & = (R-r)cos(t) - d\cdot cos\left(\frac{R-r}{r}t\right) \\
+						\end{cases}
+					\]
+
+						<div class="d-flex justify-content-center">
+							<div class="d-flex flex-wrap align-items-center">
+								<div class="custom-div">
+								<img src="./assets/gif/hypotrochoid1.gif" alt="hypotrochoid 1" width="170px" height="170px">
+								</div>
+								<div class="custom-div">
+									<img src="./assets/gif/hypotrochoid2.gif" alt="hypotrochoid 2" width="170px" height="170px">
+								</div>
+								<div class="custom-div">
+									<img src="./assets/gif/hypotrochoid3.gif" alt="hypotrochoid 3" width="210px" height="170px">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+
+
+
+				<!-- Seção 4 -->
+				<section>
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Interpolação
+						</div>
+	
+
+					
+						<img src="./assets/img/cycloid_interpolation.png" alt="" width="500px" height="500px">
+					</section>
+
+					<section>
+						<span>Definição </span>
+							\[
+							\begin{cases}
+							a_n x^n_0 + a_{n-1} x^{n-1}_0 + & \cdots + a_2 x^2_0 + a_1 x_0 + a_0  = y_0 \\
+							a_n x^n_1 + a_{n-1} x^{n-1}_1 + &  \cdots + a_2 x^2_1 + a_1 x_1 + a_1  = y_1 \\
+							& \vdots \\
+							a_n x^n_n + a_{n-1} x^{n-1}_n + & \cdots + a_2 x^2_n + a_1 x_n + a_1 = y_n \\
+							\end{cases}
+						\]
+					</section>
+
+
+					<section>
+						Forma matricial
+
+						\[\begin{bmatrix}
+							x_0^n  & x_0^{n-1} & x_0^{n-2} & \ldots & x_0 & 1 \\
+							x_1^n  & x_1^{n-1} & x_1^{n-2} & \ldots & x_1 & 1 \\
+							\vdots & \vdots    & \vdots    &        & \vdots & \vdots \\
+							x_n^n  & x_n^{n-1} & x_n^{n-2} & \ldots & x_n & 1
+							\end{bmatrix}
+							\begin{bmatrix} a_n \\ a_{n-1} \\ \vdots \\ a_0 \end{bmatrix}  =
+							\begin{bmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{bmatrix}\]
+
+						Solução: 
+						\[
+							\hat{\alpha} = (X^TX)^{-1}X^Ty
+						\]
+					</section>
+
+
+					<section>
+						<iframe src="./iframes/Interpolation.html" frameborder="0" width="800" height="600" allowfullscreen></iframe>
+					</section>
+				</section>
+
+
+
+
+				<!-- Seção 5 -->
+				<section>
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Curva Bézier
+						</div>
+
+						<p class="justify">
+							A curva de Bézier foi desenvolvida por Paul de Casteljau na decada e 1960 e implementada por Pierre Bézier na Renault, para resolver o problema de desenhar linhas suaves a partir de pontos de controle.
+						</p>
+
+						<img src="./assets/img/car_frame.jpeg" alt="car frame" width="500px">
+					</section>
+
+
+					<section>
+
+						<p class="justify">
+							Dados pontos distintos $\mathbf{P}_0, \cdots, \mathbf{P}_n$, uma curva de Bézier é simplesmente uma linha entre esses dois pontos.
+						</p>
+
+						
+
+
+
+						<div class="container">
+							<div class="row">
+							  <div class="col-md-6">
+
+									<p class="small-size">
+										Exemplo: 
+										$\mathbf{P}_0 = \begin{pmatrix}
+										0 \\
+										1
+										\end{pmatrix}$ e $\mathbf{P}_1 = \begin{pmatrix}
+										1 \\
+										0
+										\end{pmatrix}$
+
+										Parâmetro: $0 \leq t \leq 1$
+									</p>
+			
+
+							  </div>
+							  <div class="col-md-6">
+
+								  <img src="./assets/gif/bezierLinear.gif" alt="">
+
+							  </div>
+							</div>
+						  </div>
+
+
+
+						  
+
+						<table class="tg">
+							<thead>
+							  <tr>
+								<th class="tg-0lax">$t=$</th>
+								<th class="tg-0lax">$0.0$</th>
+								<th class="tg-0lax">$0.2$</th>
+								<th class="tg-0lax">$0.4$</th>
+								<th class="tg-0lax">$0.6$</th>
+								<th class="tg-0lax">$0.8$</th>
+								<th class="tg-0lax">$1.0$</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td class="tg-0lax">$B(t)=$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 0.0 \\ 1.0\end{pmatrix}$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 0.2 \\ 0.8\end{pmatrix}$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 0.4 \\ 0.6\end{pmatrix}$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 0.6 \\ 0.4\end{pmatrix}$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 0.8 \\ 0.2\end{pmatrix}$</td>
+								<td class="tg-0lax">$\begin{pmatrix} 1.0 \\ 0.0\end{pmatrix}$</td>
+							  </tr>
+							</tbody>
+							</table>
+
+
+						
+					</section>
+
+
+					<section>
+						<p class="small-size">
+							Lineares: $\mathbf{B}(t) =(1-t)\mathbf{P}_0 + t\mathbf{P}_1 $
+						</p>
+						
+
+						<p class="small-size">
+							Quadráticas: $\mathbf{B}(t) = (1 - t)^{2}\mathbf{P}_0 + 2(1 - t)t\mathbf{P}_1 + t^{2}\mathbf{P}_2 $
+						</p>
+
+						
+						<p class="small-size">
+							Cúbicas: $\mathbf{B}(t) = (1-t)^3\mathbf{P}_0+3(1-t)^2t\mathbf{P}_1+3(1-t)t^2\mathbf{P}_2+t^3\mathbf{P}_3$
+						</p>
+
+
+						<p class="small-size">
+							Fórmula geral: 
+							$
+							\begin{aligned}
+							\mathbf{B}(t) &= \sum_{i=0}^n {n\choose i}(1 - t)^{n - i}t^i\mathbf{P}_i \\
+							&=(1 - t)^n\mathbf{P}_0 + {n\choose 1}(1 - t)^{n - 1}t\mathbf{P}_1 + \cdots + {n\choose k}(1 - t)^{n-k}t^{k}\mathbf{P}_{k} + \cdots + t^n\mathbf{P}_n 
+							\end{aligned}
+							$
+						</p>
+
+					
+						<div class="container">
+							<div class="row">
+							  <div class="col-md-6">
+
+								<p>
+									Polinômio de  Bernstein:
+								$b_{i,n} = {n\choose i}(1 - t)^{n-i}t^{i}$
+								</p>
+
+							  </div>
+							  
+							  <div class="col-md-6">
+								<img src="./assets/gif/Bézier_3_big.gif" alt="bezier cubica" width="300px">
+							  </div>
+							</div>
+						  </div>
+
+
+						
+
+
+					</section>
+
+
+
+					<section>
+
+
+						<p class="justify-left small-size">
+							<strong>Algoritmo de De Casteljau:</strong>
+
+							
+							A curva no ponto $t_0$ pode ser calculada com a relação de recorrência 
+							
+
+							\[
+							\begin{aligned}
+								\beta_i^{(0)} &amp;:= \beta_i, i=0,\ldots n,\\
+								\beta_i^{(j)} &amp;:= \beta_i^{(j-1)} (1-t_0) + \beta_{i+1}^{(j-1)} t_0, i = 0,\ldots,n-j, j= 1,\ldots,n 
+							\end{aligned}
+							\]
+
+							Então, a estimativa de $B$ no ponto $t_0$ pode ser calculada em $n$ passos do algoritmo. O resultado $B(t_0)$ é dado por:
+
+							$$B(t_0)=\beta_0^{(n)}.$$
+
+							Além disso, a curva de Bézier $B$ pode ser dividida no ponto $t_0$ em duas curvas com respectivos pontos de controle:
+							$$\beta_0^{(0)},\beta_0^{(1)},\ldots,\beta_0^{(n)}$$
+							$$\beta_0^{(n)},\beta_1^{(n-1)},\ldots,\beta_n^{(0)}$$
+
+						</p>
+
+						
+					</section>
+
+
+					<section>
+						Forma matricial:
+
+						\[
+						B(t) = 
+						\begin{pmatrix}
+						1 & t & t^2 & t^3 \\
+						\end{pmatrix}
+						
+						\begin{pmatrix}
+							1 & 0 & 0 & 0 \\
+							-3 & 3 & 0 & 0 \\
+							3 & -6 & 3 & 0 \\
+							-1 & 3 & -3 & 1 \\
+						\end{pmatrix}
+
+						\begin{pmatrix}
+							P_0 \\
+							P_1 \\
+							P_2 \\
+							P_3 \\
+						\end{pmatrix}
+						\]
+
+
+					</section>
+
+
+				</section>
+
+
+
+
+<!-- 				Seção 6 -->
+				<section>
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Curva de Hermite
+						</div>
+
+						<ul>
+							<li class="small-size">
+								A curva de Hermite em homenagem ao matemático francês Charles Hermite é um polinômio cúbico interpolado por partes. 
+							</li>
+							<li class="small-size">
+								Possui uma tangente especificada em cada ponto de controle. As curvas spline Hermite podem ser ajustadas localmente porque cada seção depende apenas de suas restrições de ponto final.
+							</li>
+						</ul>
+
+						<img src="./assets/img/hermite.png" alt="hermite vs bezier" width="500px">
+
+
+					</section>
+
+
+					<section>
+						<span>
+							Curvas de Hermite com os mesmos
+							pontos iniciais e finais, apenas
+							alterando a direção da tangente
+						</span>
+
+						<img src="./assets/img/hermiteVetor.png" alt="várias curvas de hermite" width="600px">
+
+						<ul class="small-size">
+							<li>Vantagens</li>
+							<ul>
+								<li>Fácil de implementar</li>
+								<li>Passa nos pontos de controle</li>
+							</ul>
+
+							<li>Vantagens</li>
+							<ul>
+								<li>Não garante a continuidade dos segmentos adjacentes</li>
+								<li>Alterando um ponto de controle, altera toda curva</li>
+							</ul>
+
+						</ul>
+
+					</section>
+
+
+
+					<section>
+						Forma matricial:
+
+						\[
+						P(t) = 
+						\begin{pmatrix}
+						t^3 & t^2 & t & 1 \\
+						\end{pmatrix}
+
+						\begin{pmatrix}
+							2 & -2 & 1 & 1 \\
+							-3 & 3 & -2 & -1 \\
+							0 & 0 & 1 & 0 \\
+							1 & 0 & 0 & 0 \\
+						\end{pmatrix}
+
+						\begin{pmatrix}
+							P_0 \\
+							P_1 \\
+							P'_0 \\
+							P'_1 \\
+						\end{pmatrix}
+						\]
+
+
+					</section>
+
+
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+		  Reveal.initialize({ plugins: [ RevealMath.KaTeX ] });
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	</body>
+</html>
