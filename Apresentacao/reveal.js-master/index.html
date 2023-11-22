@@ -57,6 +57,27 @@
 							</ul>
 						</ul>
 					</section>
+
+					<section>
+
+						<div class="container">
+							<div class="row">
+							  <div class="col-md-6">
+								<img src="./assets/img/parametricFont.png" alt="">
+								<div><span>Modelagem de fontes</span></div>
+									
+							  </div>
+							  <div class="col-md-6">
+								<img src="./assets/img/valenteCabelo.png" alt="">
+								<div><span>Valente - Pixar.</span> </div>
+								 
+							</div>
+							</div>
+						  </div>
+						
+						
+						
+					</section>
 				</section>
 
 
@@ -366,8 +387,6 @@
 							  </tr>
 							</tbody>
 							</table>
-
-
 						
 					</section>
 
@@ -664,7 +683,7 @@
 					<section>
 						<section>
 							<div class="alert alert-primary" role="alert">
-								Implementação
+								Implementação de Curvas
 							</div>
 						</section>
 
@@ -691,15 +710,267 @@
 								Superfícies Paramétricas
 							</div>
 						</section>
+
+
+						<section>
+							<img src="./assets/img/classificacaoSuperficies.png" alt="">
+							
+						</section>
+
+
+						<section>
+
+							<div class="container">
+								<div class="row">
+								  <div class="col-md-6">
+	
+									<img src="./assets/img/elipsoideArquitetura.png" alt="" height="300px">
+									<span>The Infosys Ellipsoid, Mumbai - Índia</span>	
+								  </div>
+								  <div class="col-md-6">
+									<img src="./assets/img/hagia_sofia_ac.jpg" alt="" height="300px">
+									<span>Hagia Sophia, AC - Revelations</span>	
+								  </div>
+								</div>
+							  </div>
+
+						</section>
+
+
+						<section>
+
+							Superfícies Paramétricas
+
+							\[
+								\begin{cases}
+									x =f(u,v) \\
+									y = g(u,v) \\
+									z = h(u,v)
+								\end{cases}
+							\]
+
+
+							<div class="container">
+								<!-- Utilizando flexbox para centralizar vertical e horizontalmente -->
+								<div class="conteudo-centralizado">
+									<ul>
+										<li><a href="https://www.geogebra.org/m/yrCZjM8j">Geogebra - Cone</a></li>
+										<li><a href="https://www.geogebra.org/m/TzvVSsvJ">Geogebra - Parabolóide</a></li>
+									</ul>
+								</div>
+							  </div>
+
+							
+						</section>
+
 					</section>					
 
 
+					<section>
+						<section>
+							<div class="alert alert-primary" role="alert">
+								Superfície Bézier
+							</div>
+						</section>
+
+
+
+						<section>
+
+							<ul class="justify">
+								<li><strong>Curvas Bézier</strong> definem linhas em 2D e 3D.</li>
+								<li><strong>Superfícies Bézier</strong> estendem o conceito de CB para criar superfícies 3D.</li>
+								<li>O ponto $P(u,v)$ é obtido a partir dos parâmetros $u$ e $v$.</li>
+							</ul>
+
+
+							<img src="./assets/img/parametricSurface.png" alt="" width="450px" height="300px">
+
+						</section>
+
+
+						<section>
+							<p class="justify-left" style="margin: 0; padding: 0;">B. Quadrática: 3 pontos de controle nos eixos $u$ e $v$.</p>
+							<p class="justify-left" style="margin: 0; padding: 0;">Total: 16 pontos de controle (mesh).</p>
+
+							<div class="container">
+								<div class="row">
+								  <div class="col-md-6 mt-3 small-size">
+									<h2>funções de Blending</h2>
+									\[\begin{aligned}
+									B_0(u) &amp; = (1-u)^2 \\
+									B_1(u) &amp; = -2u^2+2u \\
+									B_2(u) &amp; = u^2 \\
+									B_0(v) &amp; = (1-v)^2 \\
+									B_1(v) &amp; = -2v^2+2v \\
+									B_2(v) &amp; = v^2 \\
+									\end{aligned}
+									\]								  
+								</div>
+
+								  <div class="col-md-6">
+									<img src="./assets/img/bezierSurfaceMesh.png" alt="" width="650px">	
+								  </div>
+
+								  <div class="col-md-12 small-size">
+									\[
+									P(u,v) = \sum_{i=0}^2\sum_{j=0}^2 p_{i,j} \cdot B_i(u) \cdot B_j(v)
+									\]
+								  </div>
+								</div>
+							  </div>
+
+						</section>
 
 
 
 
+						<section>
+							<p class="justify-left" style="margin: 0; padding: 0;">Bézier Cúbica: 4 pontos de controle nos eixos $u$ e $v$.</p>
+							<p class="justify-left">Total: 16 pontos de controle (mesh).</p>
 
-				</section>
+							<div class="container">
+								<div class="row">
+								  <div class="col-md-6 mt-3 small-size">
+									<h2>funções de Blending</h2>
+
+									<img src="./assets/img/bezierCubicSurfaceMeshFunctions.png" alt="">
+						  
+								</div>
+
+								  <div class="col-md-6">
+									<img src="./assets/img/bezierSurfaceMesh16.png" alt="" width="650px">	
+								  </div>
+
+								  <div class="col-md-12 small-size">
+									\[
+									P(u,v) = \sum_{i=0}^3\sum_{j=0}^3 p_{i,j} \cdot B_i(u) \cdot B_j(v)
+									\]
+								  </div>
+								</div>
+							  </div>
+
+						</section>
+					</section>
+
+
+
+					<section>
+						<section>
+							<div class="alert alert-primary" role="alert">
+								Superfície B-splines
+							</div>
+						</section>
+
+
+						<section>
+							<ul class="small-size">
+								<li>Necessita de $m+1$ (nas linhas) e $n+1$ (nas coluna) pontos de controle. </li>
+								<li>Um vetor de $h+1$ nós na direção $u$: $U = \{u_0, u_1,\cdots, u_h\}$.</li>
+								<li>Um vetor de $k+1$ nós na direção $v$: $V = \{v_0, v_1,\cdots, v_h\}$.</li>
+								<li>$N_{i,p}(u)$ funções de base em $u$ de grau $p$.</li>
+								<li>$N_{j,p}(v)$ funções de base em $u$ de grau $q$.</li>
+							</ul>
+
+							<div class="small-size">
+								<p>A superfície B-spline é definida por </p>
+
+								\[
+								P(u,v) = \sum_{i=0}^m\sum_{j=0}^n N_{i,p}(u) N_{j,q}(v) p_{i,j}.
+								\]
+							</div>
+
+
+							<img src="./assets/img/bSplineSurfaces.png" alt="">
+
+						</section>
+
+
+						<section>
+							<img src="./assets/img/bSplineSurfaceAplication.png" alt="">
+						</section>
+
+					</section>
+
+
+
+					<section>
+						<section>
+
+						</section>
+
+						<section>
+							<ul>
+								<li>O termo NURBS é a abreviatura de Non- Uniform Rational B-Splines Surfaces, ou
+									seja, é uma B-Spline racional (originária da razão de 2 polinômios).</li>
+								<li>Padrão dos softwares CAD.</li>
+							</ul>
+ 
+
+							<img src="./assets/img/nurbsTable.png" alt="">
+						</section>
+
+
+
+						<section>
+							<div class="container">
+								<div class="row">
+								  <div class="col-md-6">
+	
+									<img src="./assets/img/nurbsCars.png" alt="" height="200px">
+									<span>Aplicação de NUBS no design de carros</span>	
+								  </div>
+								  <div class="col-md-6">
+									<img src="./assets/img/nurbsModel.png" alt="" height="200px">
+									<span>NUBS num modelo com poucos polígonos</span>	
+								  </div>
+								  <div class="col-md-12">
+									<img src="./assets/gif/NURBS_3-D_surface.gif" alt="" height="200px">
+									<div><span>Superfície com NUBS.</span></div>
+										
+								  </div>
+								</div>
+							  </div>
+						</section>
+					</section>
+
+
+
+
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Implementação de Superfícies
+						</div>
+					</section>
+
+
+
+
+					<section>
+						<div class="alert alert-primary" role="alert">
+							Referências
+						</div>
+
+
+
+
+						<div class="container">
+							<div class="row">
+							  	<div class="col-md-6">
+									<img src="./assets/img/bookCpp.png" alt="" height="400px">							  
+								</div>
+							  	<div class="col-md-6">
+									<img src="./assets/img/bookConci.png" alt="" height="400px">							  
+								</div>
+							</div>
+						</div>
+
+
+						
+
+
+					</section>
+
 
 
 
